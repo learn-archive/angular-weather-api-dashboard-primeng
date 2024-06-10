@@ -1,5 +1,19 @@
 <p>dashboard works!</p>
 
 <div class="card flex justify-content-center">
-  <p-button label="Load" icon="pi pi-check" (click)="onClick()"></p-button>
+  @if (dataLoaded) {
+  <p-button
+    [loading]="loading"
+    label="Load"
+    icon="pi pi-check"
+    (click)="load()"
+  ></p-button>
+  } @else {
+  <p-button
+    [loading]="loading"
+    label="Load"
+    icon="pi pi-times"
+    (click)="load()"
+  ></p-button>
+  }
 </div>
